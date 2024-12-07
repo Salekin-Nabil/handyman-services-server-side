@@ -246,7 +246,7 @@ app.put('/reviews/:email', async (req, res) => {
     res.send({ result });
   });
 
-  //Reviews GET API latest 6 reviews
+  //Reviews GET API latest 3 reviews
   app.get('/reviews_3', async (req, res)=>{
     const cursor = reviewCollection.find({}).sort({_id:-1}).limit(3);
     const reviews = await cursor.toArray();
